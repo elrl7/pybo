@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="container-fluid">
+        <button class="btn btn-success">소정근로시간</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">기본근로시간</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">휴일관리</button>
+        <div><br/></div>
+        <form action="#">
+            <table class="table table-bordered table-hover table-sm margin">
+                <thead class="thead-dark">
+                <tr class="text-center">
+                    <th>구분명</th>
+                    <th>시작시간</th>
+                    <th>종료시간</th>
+                    <th>사원기본값</th>
+                    <th>연봉제적용</th>
+                    <th>월급제적용</th>
+                    <th>시급제적용</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-center">
+                    <td>정상근로</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+
+                </tr>
+                <tr class="text-center">
+                    <td>석식시간</td>
+                    <td>00:00</td>
+                    <td>00:00</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+
+                </tr>
+                <tr class="text-center">
+                    <td>중식시간</td>
+                    <td>12:00</td>
+                    <td>13:00</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+
+                </tr>
+                <tr class="text-center">
+                    <td>야식시간</td>
+                    <td>00:00</td>
+                    <td>00:00</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+                    <td>예</td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

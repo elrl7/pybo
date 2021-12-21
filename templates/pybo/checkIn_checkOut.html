@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        .table th,
+        .table td {
+            text-align:center;
+            vertical-align:middle;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-6 pl-0">
+            <table class="table table-bordered table-hover table-sm margin">
+                <thead class="thead-dark">
+                <th>시작</th>
+                <th>종료</th>
+                <th>부서명</th>
+                <th>Action</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="date"></td>
+                    <td><input type="date"></td>
+                    <td>전체</td>
+                    <td>전체</td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-success">조회하기</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success">출력하기</button>
+            <br/><br/>
+        </div>
+        <table class="table table-bordered table-hover table-sm">
+             <colgroup>
+                    <col width="10%" style="background-color:#eaeaea;">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="50%">
+                    <col width="10%">
+                </colgroup>
+            <thead class="thead-dark">
+            <tr>
+                <th>사원번호</th>
+                <th>사원명</th>
+                <th>부서명</th>
+                <th>Action</th>
+                <th>일시</th>
+                <th>적용여부</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2046</td>
+                <td>문순이</td>
+                <td>관리부</td>
+                <td>출근</td>
+                <td>2021-10-21 08:01:34</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><br/></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+
+        </div>
+</div>
+</body>
+</html>

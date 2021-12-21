@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="container-fluid">
+        <button class="btn btn-success">소정근로시간</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">기본근로시간</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">휴일관리</button>
+        <div><br/></div>
+        <form action="#">
+            <button type="submit" class="btn btn-primary float-right mb-3">수정</button>
+            <table class="table table-bordered table-hover table-sm">
+                <thead class="thead-dark">
+                <tr class="text-center">
+                    <th>기본주휴일</th>
+                    <th>소정근로시간</th>
+                    <th>적용최저시급</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-center">
+                    <td><input type="text" value="일" style="text-align : right;"></td>
+                    <td><input type="text" value="16" style="text-align : right;"></td>
+                    <td><input type="text" value="5,000" style="text-align : right;"></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

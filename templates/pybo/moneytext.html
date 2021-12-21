@@ -1,0 +1,109 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        #top th,
+        #top td {
+            text-align:center;
+        }
+
+        table {
+            table-layout : fixed;
+        }
+
+        .table th {
+            background-color:gray;
+            color:white;
+        }
+    </style>
+    <title>moneytext</title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table table-bordered table-sm">
+                <tr class="text-center">
+                    <th>검색기간</th>
+                    <td><input type="month"></td>
+                </tr>
+                <tr class="text-center">
+                    <th>부서명</th>
+                    <td>
+                        <select name="department" class="select">
+                            <option>부서명</option>
+                            <option>관리부</option>
+                            <option>경영부</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <th>사원명</th>
+                    <td>
+                        <select name="em-name" class="select">
+                            <option>사원명</option>
+                            <option>김영진</option>
+                            <option>홍길동</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <th>사원번호</th>
+                    <td>2057</td>
+                </tr>
+                <tr class="text-center">
+                    <th>직급</th>
+                    <td>
+                        <select name="em-posi" class="select">
+                            <option>직급</option>
+                            <option>부장</option>
+                            <option>사원</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <th>급여종류</th>
+                    <td>월급여</td>
+                </tr>
+            </table>
+            <div>
+            <button class="btn btn-primary" style="margin-left:80px;">급여검색</button>&nbsp;&nbsp;
+            <button class="btn btn-primary">갱신하기</button>
+            </div><br/>
+            <div>
+            <button class="btn btn-primary" style="margin-left:80px;">등록하기</button>&nbsp;&nbsp;
+            <button class="btn btn-danger">삭제하기</button>
+            </div>
+    </div>
+<div class="col-md-8">
+    <table id="top" class="table table-bordered table-sm">
+        <tr>
+            <th>급여기준액</th>
+            <td>5000</td>
+            <th>성명</th>
+            <td></td>
+            <th>입사일자</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>부서</th>
+            <td></td>
+            <th>직책</th>
+            <td></td>
+            <th>계좌번호</th>
+            <td></td>
+        </tr>
+    </table>
+            <!--  엑셀파일 오는 자리 -->
+            <div>
+
+            </div>
+        </div>
+        </div>
+</div>
+</body>
+</html>

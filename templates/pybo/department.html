@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        .table th,
+        .table td {
+            text-align:center;
+            vertical-align:middle;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+<div class="container-fluid">
+    <a href="/department_add" class="btn btn-primary float-right">부서등록</a>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-sm mt-3">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="50%">
+                        <col width="10%">
+                        <col width="20%">
+                    </colgroup>
+                    <thead class="thead-dark">
+                    <tr>
+                      <th>부서번호</th>
+                      <th>부서명</th>
+                      <th>상태</th>
+                      <th>변경</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td><a href="/department_update">임원</a></td>
+                            <td>정상</td>
+                            <td><button class="btn btn-primary p-2" type="button" onclick="">활성</button></td>
+                        </tr>
+                    <tr>
+                        <td>200</td>
+                        <td><a href="">관리부</a></td>
+                        <td>중단</td>
+                        <td><button class="btn btn-danger p-2" type="button" onclick="">중지</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+</div>
+</div>
+</body>
+</html>

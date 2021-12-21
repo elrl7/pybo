@@ -1,0 +1,609 @@
+{% load static %}
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        #remark {
+            font-size : 8px;
+        }
+
+        th, td {
+            text-align : center;
+        }
+
+        .my-custom-scrollbar {
+            position: relative;
+            height: 500px;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+
+        #example {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #example th, td {
+            white-space: nowrap;
+        }
+
+        .my-custom-scrollbar {
+            position: relative;
+            height: 600px;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+        #example thead  {
+            position:sticky;
+            top : 0px;
+            background-color:gray !important;
+            color:white;
+        }
+        tfoot {
+            color:white;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="container-fluid">
+        <button class="btn btn-success">조회하기</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">미리보기</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">출력하기</button>
+        <div><br/></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <input type="radio" name="info" value="em_search"> 사원번호&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="info" value="em_name" checked> 이름&nbsp;&nbsp;&nbsp;
+                <input type="text" size="10">&nbsp;
+                <button class="btn btn-dark btn-sm" type="button" value="search">조회하기</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-4 p-0">
+                        <table class="table table-bordered table-sm ">
+                            <tr>
+                                <th style="background-color:gray; color:white">기준일</th>
+                                <td>2021-12</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="remark">
+                    ※ 계산기준 변경에 따라 다른 시트의 연차계산도 달라지므로 꼭 확인하시기 바랍니다.<br/>
+                    ※ 아래의 연차 개수는 1년차에 매월발생한 연차를 2년차 말일까지 사용할 수 있다는 노사합의를 전제로 합니다.
+                    </div>
+                </div>
+            </div>
+        </div><br/>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table id="example" class="table table-bordered table-striped" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2" style="vertical-align : middle;">사원번호</th>
+                        <th scope="col" rowspan="2" style="vertical-align : middle;">직책</th>
+                        <th scope="col" rowspan="2" style="vertical-align : middle;">성명</th>
+                        <th scope="col" rowspan="2" style="vertical-align : middle;">입사일</td>
+                        <th scope="col" rowspan="2" style="vertical-align : middle;">퇴사일</th>
+                        <th scope="col">연초</th>
+                        <th scope="col" colspan="2">1월</th>
+                        <th scope="col" colspan="2">2월</th>
+                        <th scope="col" colspan="2">3월</th>
+                        <th scope="col" colspan="2">4월</th>
+                        <th scope="col" colspan="2">5월</th>
+                        <th scope="col" colspan="2">6월</th>
+                        <th scope="col" colspan="2">7월</th>
+                        <th scope="col" colspan="2">8월</th>
+                        <th scope="col" colspan="2">9월</th>
+                        <th scope="col" colspan="2">10월</th>
+                        <th scope="col" colspan="2">11월</th>
+                        <th scope="col" colspan="2">12월</th>
+                        <th scope="col" colspan="3">합계</th>
+                        <th scope="col" colspan="3">연초</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">발생</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">발생</th>
+                        <th scope="col">사용</th>
+                        <th scope="col">총발생</th>
+                        <th scope="col">총사용</th>
+                        <th scope="col">적치</th>
+                        <th scope="col">이월연차</th>
+                        <th scope="col">이월월차</th>
+                        <th scope="col">발생연도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                     <tr>
+                        <th scope="row">0000</th>
+                        <td>사원</td>
+                        <td>홍길동</td>
+                        <td>2012-12-01</td>
+                        <td>2021-11-11</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <tfoot style="background-color:gray;">
+                    <tr>
+                        <th scope="row" colspan="5"></th>
+                        <td>90</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

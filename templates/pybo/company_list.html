@@ -1,0 +1,105 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <style>
+    #index th,
+    #index td {
+        text-align:center;
+        vertical-align:middle;
+    }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+<div class="container-fluid">
+    <a href="{% url 'pybo:company_add' %}" class="btn btn-primary float-right">회원등록</a>
+        <div class="table-responsive">
+            <table id="index" class="table table-bordered table-hover table-sm mt-3">
+                <thead class="thead-dark">
+                <tr>
+                  <th>번호</th>
+                  <th>회사명</th>
+                  <th>사업자번호</th>
+                  <th>주소</th>
+                  <th>연락처</th>
+                  <th>만료일자</th>
+                  <th>상태</th>
+                  <th>등록일시</th>
+                  <th>비고</th>
+                  <th>변경</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% if company_list %}
+                        {% for company in company_list %}
+                            <tr>
+                                <td>{{ company.cno }}</td>
+                                <td>{{ company.company_name }}</td>
+                                <td>{{ company.company_bisnum }}</td>
+                                <td>{{ company.company_address }}</td>
+                                <td>{{ company.company_telno }}</td>
+                                <td>{{ company.expiration_date }}</td>
+                                {% if company.company_status == '1' %}
+                                <td>활성</td>
+                                {% else %}
+                                <td>중지</td>
+                                {% endif %}
+                                <td>{{ company.create_date }}</td>
+                                <td>{{ company.company_note }}</td>
+                                {% if company.company_status == '1'%}
+                                <td><button class="btn btn-danger p-2" type="button" id="stop" value="1">중지</button></td>
+                                {% else %}
+                                <td><button class="btn btn-primary p-2" type="button" id="active" value="0">활성</button></td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <p>질문이 없습니다.</p>
+                    {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+
+</div>
+</div>
+<script>
+$("#stop").on("click",function(){
+    var status = $("#stop").val();
+    $.ajax({
+        url: '/company_list_active/',
+        type: "POST",
+        data: {status:status},
+        dataType: "json",
+        success:function(data){
+            alert('1');
+        },
+        error:function(data){
+            alert('2');
+        }
+   })
+})
+$("#active").on("click",function(){
+    var status = $("#active").val();
+    $.ajax({
+        url: '/company_list_active/',
+        type: "POST",
+        data: {status:status},
+        dataType: "json",
+        success:function(data){
+            alert('3');
+        },
+        error:function(data){
+            alert('4');
+        }
+   })
+})
+</script>
+</body>
+</html>

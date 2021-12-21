@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        #search td {
+            text-align:center;
+            vertical-align:middle;
+        }
+
+
+        .text-center th {
+            background-color:gray;
+            color:white;
+            vertical-align:middle;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="container-fluid">
+        <button class="btn btn-success">소정근로시간</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">기본근로시간</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">휴일관리</button>
+        <div><br/></div>
+        <div class="container p-0">
+            <div class="row">
+                <div class="col-md-3">
+                    <table class="table table-bordered table-sm" id="search">
+                        <tr class="search">
+                            <td style="background-color:gray; color:white;">조회년도</td>
+                            <td><input type="text" value="2020" style="text-align : right; width:55px;
+                              border:0px; font-weight:bold; font-size:large;"></td>
+                            <td>
+                                <input type='button' onclick='count("plus")' style="background : white;" value='▲'/><br/>
+                                <input type='button' onclick='count("minus")' style="background : white; margin-top:5px;" value='▼'/>
+                            </td>
+                        </tr>
+                     </table>
+                </div>
+                <div class="mt-3">
+                    <button type="button" class="btn btn-primary mt-1">조회하기</button>
+                </div>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-bordered table-hover table-sm margin">
+                    <thead class="thead-dark text-center">
+                        <th class="col-md-3">날짜</th>
+                        <th>휴일명</th>
+                        <th>구분</th>
+                        <th>비고</th>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td>2020-01-01</td>
+                            <td><a href="">신정</a></td>
+                            <td>유급</td>
+                            <td></td>
+                        </tr>
+                         <tr class="text-center">
+                            <td>2021-01-01</td>
+                            <td><a href="">신정</a></td>
+                            <td>유급</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <form action="#">
+                    <table class="table table-bordered table-sm">
+                        <tr class="text-center">
+                            <th>날짜</th>
+                            <td><input type="date"></td>
+                        </tr>
+                        <tr class="text-center">
+                            <th>휴일명</th>
+                            <td>신정</td>
+                        </tr>
+                         <tr class="text-center">
+                            <th>구분</th>
+                            <td>유급</td>
+                        </tr>
+                         <tr class="text-center">
+                            <th>비고</th>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <button class="btn btn-primary float-right" type="submit" value="resist">등록</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

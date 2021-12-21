@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="container-fluid">
+        <button class="btn btn-success">보험료 관리</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">급여항목관리(고정)</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">급여항목관리(비고정)</button>
+        <div><br/></div>
+        <form action="#">
+
+            <button type="submit" class="btn btn-primary float-right">갱신</button>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

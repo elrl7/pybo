@@ -1,0 +1,99 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        #pop th {
+            background-color:gray;
+            color:white;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="container-fluid">
+        <button class="btn btn-success">보험료 관리</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">급여항목관리(고정)</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">급여항목관리(비고정)</button>
+        <div><br/></div>
+        <button class="btn btn-primary  float-right">등록하기</button>
+        <div class="row mt-5">
+            <div class="col-md-8">
+
+                <table class="table table-bordered table-hover table-sm margin">
+                    <thead class="thead-dark">
+                    <tr class="text-center">
+                        <th>구분</th>
+                        <th>항목명</th>
+                        <th>과세여부</th>
+                        <th>절사단위</th>
+                        <th>사용여부</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="text-center">
+                        <td>지급</td>
+                        <td><a href="">기본급</a></td>
+                        <td>과세</td>
+                        <td>십단위</td>
+                        <td>예</td>
+                    <tr class="text-center">
+                        <td>공제</td>
+                        <td><a href="">기본급</a></td>
+                        <td>비과세</td>
+                        <td></td>
+                        <td></td>
+                    <tr class="text-center">
+                        <td>지급</td>
+                        <td><a href="">기본급</a></td>
+                        <td>과세</td>
+                        <td>십단위</td>
+                        <td>예</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+    <br/>
+        <div class="col-md-4">
+            <form action="#">
+                <table id="pop" class="table table-bordered table-sm">
+                    <tr class="text-center">
+                        <th>구분</th>
+                        <td>지급</td>
+                    </tr>
+                    <tr class="text-center">
+                        <th>항목명</th>
+                        <td>기본급</td>
+                    </tr>
+                    <tr class="text-center">
+                        <th>과세여부</th>
+                        <td>과세</td>
+                    </tr>
+                    <tr class="text-center">
+                        <th>절사단위</th>
+                        <td>십단위</td>
+                    </tr>
+                    <tr class="text-center">
+                        <th>사용여부</th>
+                        <td>예</td>
+                    </tr>
+                </table>
+                <div class="float-right">
+                <button class="btn btn-primary" type="submit">등록</button>
+                <button class="btn btn-primary" type="submit">수정</button>
+                <button class="btn btn-primary" type="submit">삭제</button>
+                </div>
+            </form>
+        </div>
+        </div>
+         </div>
+</div>
+</div>
+</body>
+</html>

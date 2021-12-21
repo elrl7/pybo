@@ -1,0 +1,150 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pop.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- pybo CSS -->
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div class="register">
+        <form  method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+            {% for field in form %}
+                {% if field.errors %}
+                <strong>{{ field.label }}</strong>
+                {{ field.errors }}
+                {% endif %}
+            {% endfor %}
+            </div>
+            {% endif %}
+            <!-- 오류표시 End -->
+            <h3>회원추가</h3>
+                <div class="flex">
+                    <ul class="container">
+                        <li class="item center">
+                            회사명
+                        </li>
+                        <li class="item">
+                            {{ form.company_name|default_if_none:'' }}
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            사업자번호
+                        </li>
+                        <li class="item">
+                            {{ form.company_bisnum|default_if_none:'' }}
+<!--                            <input type="text" name="company_bisnum"-->
+<!--                                   value="{{ form.company_bisnum|default_if_none:'' }}" required>-->
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            주소
+                        </li>
+                        <li class="item">
+                            {{ form.company_address|default_if_none:'' }}
+<!--                            <input type="text" name="company_address"-->
+<!--                                   value="{{ form.company_address|default_if_none:'' }}" required>-->
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            연락처
+                        </li>
+                        <li class="item">
+                            {{ form.company_telno|default_if_none:'' }}
+<!--                            <input type="text" name="company_telno"-->
+<!--                                   value="{{ form.company_telno|default_if_none:'' }}" required>-->
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            만료일자
+                        </li>
+                        <li class="item">
+                            <input type="datetime-local" value="{{ form.expiration_date }}">
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            상태
+                        </li>
+                        <li class="item">
+                            <select name="company_status" id="company_status"
+                                    value="{{ form.company_status|default_if_none:'' }}" required>
+                                <option value="선택" selected>선택</option>
+                                <option value="1">활성</option>
+                                <option value="0">중지</option>
+                            </select>
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            이메일
+                        </li>
+                        <li class="item">
+                            {{ form.company_email|default_if_none:'' }}
+<!--                            <input type="email" name="company_email"-->
+<!--                                   value="{{ form.company_email|default_if_none:'' }}" required>-->
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            비고
+                        </li>
+                        <li class="item">
+                            {{ form.company_note|default_if_none:'' }}
+<!--                            <textarea cols="40" rows="5" style="resize:none;" name="company_note"-->
+<!--                            value="{{ form.company_note|default_if_none:'' }}"></textarea>-->
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+
+                        </li>
+                        <li class="item">
+                            <button class="submit">등록</button>
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pop.css' %}">
+    <!-- pybo CSS -->
+    <title>Hello, pybo!</title>
+</head>
+<body>
+
+<div class="register">
+        <h3>회원수정</h3>
+        <form action="">
+            <div class="flex">
+                <ul class="container">
+                    <li class="item center">
+                        회사명
+                    </li>
+                    <li class="item">
+                        <input type="text" name="name" autofocus required>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        사업자번호
+                    </li>
+                    <li class="item">
+                        <input type="text" required>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        주소
+                    </li>
+                    <li class="item">
+                        <input type="text"  required>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        연락처
+                    </li>
+                    <li class="item">
+                        <input type="text" required>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        만료일자
+                    </li>
+                    <li class="item">
+                        <input type="date" required>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        상태
+                    </li>
+                    <li class="item">
+                        <select name="gender" id="" required>
+                            <option value="선택" selected>선택</option>
+                            <option value="활성">활성</option>
+                            <option value="중지">중지</option>
+                        </select>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        이메일
+                    </li>
+                    <li class="item">
+                        <input type="email" required>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+                        비고
+                    </li>
+                    <li class="item">
+                        <textarea cols="40" rows="5" style="resize:none;"></textarea>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+                <ul class="container">
+                    <li class="item center">
+
+                    </li>
+                    <li class="item">
+                        <button class="submit">수정</button>
+                    </li>
+                    <li class="item">
+
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        td, th {
+            text-align : center;
+        }
+        table {
+            table-layout:fixed;
+        }
+        #sub {
+            font-size:30px;
+            font-weight:bold;
+            text-align:center;
+        }
+        .row {
+            float: none;
+            margin: 0 auto;
+        }
+        .row div {
+            float: none;
+            margin: 0 auto;
+        }
+    </style>
+    <title>retire_pension</title>
+</head>
+<body>
+<div class="container">
+    <div class="my-3">
+        <button class="btn btn-success">조회하기</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">미리보기</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success">출력하기</button>
+    </div>
+    <div><br/></div>
+    <div class="row">
+        <div class="col-md-2 p-0">
+            <table class="table table-bordered table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>급여연월</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td><input type="month"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-2 p-0">
+            <table class="table table-bordered table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>급여종류</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td>
+                           <select name="var">
+                                <option>급여</option>
+                                <option value="1">1</option>
+                                <option>1</option>
+                           </select>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-2 p-0">
+            <table class="table table-bordered table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>이체의뢰서</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td>
+                           <select name="req">
+                                <option>포함여부</option>
+                                <option value="1">1</option>
+                                <option>1</option>
+                           </select>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-2 p-0">
+            <table class="table table-bordered table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>출금형태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td>
+                           <select name="type">
+                                <option>선택</option>
+                                <option value="1">1</option>
+                                <option>1</option>
+                           </select>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-2 p-0">
+            <table class="table table-bordered table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>확인증</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td>
+                           <select name="comfirm">
+                                <option>입력</option>
+                                <option value="1">1</option>
+                                <option>1</option>
+                           </select>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=" float-right">
+        <br/><br/><br/><br/><br/>
+        <button class="btn btn-primary" type="button">확인</button>
+    </div>
+
+
+</div>
+</body>
+</html>

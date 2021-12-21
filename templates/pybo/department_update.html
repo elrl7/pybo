@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pop.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- pybo CSS -->
+    <title>Hello, pybo!</title>
+</head>
+<body>
+<div class="container">
+    <div class="register">
+            <h3>부서수정</h3>
+            <form action="">
+                <div class="flex">
+                    <ul class="container">
+                        <li class="item center">
+                            부서번호
+                        </li>
+                        <li class="item">
+                            <input type="text" name="name" autofocus required>
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+                            부서명
+                        </li>
+                        <li class="item">
+                            <input type="text" required>
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+
+                        </li>
+                        <li class="item">
+                            <button class="submit">수정</button>
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                    <ul class="container">
+                        <li class="item center">
+
+                        </li>
+                        <li class="item">
+                            <button class="submit">취소</button>
+                        </li>
+                        <li class="item">
+
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
